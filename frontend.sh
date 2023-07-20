@@ -2,8 +2,6 @@ sudo -s
 sudo set-hostname frontend
 yum install nginx -y
 
-cd
-cd roboshop
 cp -f roboshop.conf /etc/nginx/default.d/
 
 systemctl enable nginx
