@@ -11,10 +11,9 @@ useradd roboshop
 
 
 echo -e "${RED}>>>>>>>>>>>>> removing and copying repo files and service files <<<<<<<<<<${RESET}"
-rm -rf /etc/systemd/system/catalogue.service /etc/yum.repos.d/mongo.repo
+rm -rf /etc/systemd/system/catalogue.service /etc/yum.repos.d/mongo.repo /tmp/catalogue.zip /app
 cp -f catalogue.service /etc/systemd/system/catalogue.service
 cp -f mongo.repo /etc/yum.repos.d/mongo.repo
-rm  -rf /tmp/catalogue.zip
 
 
 echo -e "${RED}>>>>>>>>>>>>> creating app dir <<<<<<<<<<${RESET}"
@@ -34,15 +33,15 @@ cd /app
 npm install
 
 
-echo -e "${RED}>>>>>>>>>>>>> Installing nginx <<<<<<<<<<${RESET}"
+echo -e "${RED}>>>>>>>>>>>>> restaring catalogue <<<<<<<<<<${RESET}"
 systemctl daemon-reload
 systemctl enable catalogue
-systemctl start catalogue
+systemctl restart catalogue
 
 
-echo -e "${RED}>>>>>>>>>>>>> Installing nginx <<<<<<<<<<${RESET}"
+echo -e "${RED}>>>>>>>>>>>>> Installing monogdb <<<<<<<<<<${RESET}"
 yum install mongodb-org-shell -y
 
 
-echo -e "${RED}>>>>>>>>>>>>> Installing nginx <<<<<<<<<<${RESET}"
+echo -e "${RED}>>>>>>>>>>>>> connecting to monodb <<<<<<<<<<${RESET}"
 mongo --host  172.31.88.57 </app/schema/catalogue.js
