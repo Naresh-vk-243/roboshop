@@ -1,11 +1,11 @@
 #sudo -s
 #sudo set-hostname frontend
 
-RED='\033[31m'
-RESET='\033[0m'
+RED='\e[31m'
+RESET='\e[0m'
 
 
-echo -+e "${RED}>>>>>>>>>>>>> Installing nginx <<<<<<<<<<${RESET}";
+echo -e "${RED}>>>>>>>>>>>>> Installing nginx <<<<<<<<<<${RESET}";
 yum install nginx -y
 cp -f roboshop.conf /etc/nginx/default.d/
 
