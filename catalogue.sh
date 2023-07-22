@@ -2,7 +2,7 @@ RED='\e[31m'
 RESET='\e[0m'
 
 echo -e "${RED}>>>>>>>>>>>>> Installing nodejs <<<<<<<<<<${RESET}"
-curl -sL https://rpm.nodesource.com/setup_lts.x | bash      v
+curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 yum install nodejs -y
 
 
