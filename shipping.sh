@@ -29,8 +29,8 @@ systemctl daemon-reload
 
 
 echo -e "${Red} <<<<<<<<<<<<<< enabling user >>>>>>>>>>>>>>${End}"
-systemctl enable user
-systemctl restart user
+systemctl enable shipping
+systemctl restart shipping
 
 
 echo -e "${Red} <<<<<<<<<<<<<< installing mysql >>>>>>>>>>>>>>${End}"
