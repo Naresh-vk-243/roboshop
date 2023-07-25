@@ -1,13 +1,11 @@
-Red="\e[30m"
-End="\e[0m"
+Red='\e[30m'
+End='\e[0m'
 
 echo  -e "${Red} <<<<<<<<<<<<<< Downloading the Redis rpm file which contains all versions >>>>>>>>>>>>>>${End}"
 yum install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
 
-#echo  -e "${Red} <<<<<<<<<<<<<< Enabling the 6.2 veriosn from rpm file >>>>>>>>>>>>>>${End}"
-echo -e "${RED}>>>>>>>>>>>>> Installing nginx <<<<<<<<<<${RESET}"
+echo  -e "${Red} <<<<<<<<<<<<<< Enabling the 6.2 veriosn from rpm file >>>>>>>>>>>>>>${End}"
 yum module enable redis:remi-6.2 -y
-
 
 
 echo  -e "${Red} <<<<<<<<<<<<<< installing the redis >>>>>>>>>>>>>>${End}"

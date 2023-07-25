@@ -1,5 +1,5 @@
-Red="\e[30m"
-End="\e[0m"
+Red='\e[30m'
+End='\e[0m'
 
 echo -e "${Red} <<<<<<<<<<<<<< removig and copying files  >>>>>>>>>>>>>>${End}"
 rm -rf /app /tmp/payment.zip /etc/systemd/system/payment.service
