@@ -28,5 +28,5 @@ systemctl daemon-reload
 
 
 echo -e "${Red} <<<<<<<<<<<<<< enabling user >>>>>>>>>>>>>>${End}"
-systemctl enable user
-systemctl restart user
+systemctl enable payment
+systemctl restart payment
