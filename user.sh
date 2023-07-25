@@ -40,4 +40,4 @@ yum install mongodb-org-shell -y
 
 
 echo -e "${Red}} <<<<<<<<<<<<<< checking mongodb connection >>>>>>>>>>>>>>${End}"
-mongo --host MONGODB-SERVER-IPADDRESS </app/schema/user.js
+mongo --host 172.31.88.57 </app/schema/user.js

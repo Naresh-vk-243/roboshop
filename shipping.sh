@@ -38,4 +38,4 @@ yum install mysql -y
 
 
 echo -e "${Red} <<<<<<<<<<<<<< checking mysql connection >>>>>>>>>>>>>>${End}"
-mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pRoboShop@1 </app/schema/shipping.sql
+mysql -h 172.31.87.23 -uroot -pRoboShop@1 </app/schema/shipping.sql
