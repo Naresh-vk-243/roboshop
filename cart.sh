@@ -2,35 +2,35 @@ Red='\e[31m'
 End='\e[0m'
 
 echo -e "${Red} <<<<<<<<<<<<<< removig and copying files  >>>>>>>>>>>>>>${End}"
-rm -rf /app /etc/systemd/system/cart.service
-cp -f cart.service /etc/systemd/system/cart.service
+rm -rf /app /etc/systemd/system/cart.service &>>${log}
+cp -f cart.service /etc/systemd/system/cart.service&>>${log}
 
 
 echo -e "${Red} <<<<<<<<<<<<<< downloading nodejs and installing  >>>>>>>>>>>>>>${End}"
-curl -sL https://rpm.nodesource.com/setup_lts.x | bash
-yum install nodejs -y
+curl -sL https://rpm.nodesource.com/setup_lts.x | bash&>>${log}
+yum install nodejs -y&>>${log}
 
 
 echo -e "${Red} <<<<<<<<<<<<<< roboshop user adding  >>>>>>>>>>>>>>${End}"
-useradd roboshop
+useradd roboshop&>>${log}
 
 echo -e "${Red} <<<<<<<<<<<<<< creating dir nad downloading code base fro cart >>>>>>>>>>>>>>${End}"
-mkdir /app
-curl -L -o /tmp/cart.zip https://roboshop-artifacts.s3.amazonaws.com/cart.zip
-cd /app
-unzip /tmp/cart.zip
+mkdir /app&>>${log}
+curl -L -o /tmp/cart.zip https://roboshop-artifacts.s3.amazonaws.com/cart.zip&>>${log}
+cd /app&>>${log}
+unzip /tmp/cart.zip&>>${log}
 
 
 echo -e "${Red} <<<<<<<<<<<<<< rinstalling dependencies  >>>>>>>>>>>>>>${End}"
-cd /app
-npm install
+cd /app&>>${log}
+npm install&>>${log}
 
 
 echo -e "${Red} <<<<<<<<<<<<<< reloading daemon >>>>>>>>>>>>>>${End}"
-systemctl daemon-reload
+systemctl daemon-reload&>>${log}
 
 
 echo -e "${Red} <<<<<<<<<<<<<< enabling and reloading cart service  >>>>>>>>>>>>>>${End}"
-systemctl enable cart
-systemctl restart cart
+systemctl enable cart&>>${log}
+systemctl restart cart&>>${log}
 
