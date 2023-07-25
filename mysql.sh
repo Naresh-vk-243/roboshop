@@ -3,6 +3,7 @@ End='\e[0m'
 
 echo -e "${Red} <<<<<<<<<<<<<< removig and copying files  >>>>>>>>>>>>>>${End}"
 rm -rf /etc/yum.repos.d/mysql.repo
+cp -f mysql.repo /etc/yum.repos.d/mysql.repo
 
 
 echo -e "${Red} <<<<<<<<<<<<<< disableing previous mysql  >>>>>>>>>>>>>>${End}"
