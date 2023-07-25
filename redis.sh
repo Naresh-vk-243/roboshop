@@ -1,4 +1,4 @@
-Red='\e[30m'
+Red='\e[31m'
 End='\e[0m'
 
 echo  -e "${Red} <<<<<<<<<<<<<< Downloading the Redis rpm file which contains all versions >>>>>>>>>>>>>>${End}"
