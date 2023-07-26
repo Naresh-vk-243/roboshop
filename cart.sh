@@ -1,5 +1,6 @@
 Red='\e[31m'
 End='\e[0m'
+log=/tmp/roboshop.log
 
 echo -e "${Red} <<<<<<<<<<<<<< removig and copying files  >>>>>>>>>>>>>>${End}"
 rm -rf /app /etc/systemd/system/cart.service &>>${log}
