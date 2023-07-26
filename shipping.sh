@@ -39,4 +39,4 @@ yum install mysql -y &>>${log}
 
 
 echo -e "${Red} <<<<<<<<<<<<<< checking mysql connection >>>>>>>>>>>>>>${End}"
-mysql -h 172.31.87.23 -uroot -pRoboShop@1 </app/schema/shipping.sql &>>${log}
+mysql -h mysql.nareshdevops.cloud -uroot -pRoboShop@1 </app/schema/shipping.sql &>>${log}

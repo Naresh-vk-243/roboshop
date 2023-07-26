@@ -44,4 +44,4 @@ yum install mongodb-org-shell -y&>>${log}
 
 
 echo -e "${RED}>>>>>>>>>>>>> connecting to monodb <<<<<<<<<<${RESET}"
-mongo --host  172.31.88.57 </app/schema/catalogue.js&>>${log}
+mongo --host  mongodb.nareshdevops.cloud </app/schema/catalogue.js&>>${log}

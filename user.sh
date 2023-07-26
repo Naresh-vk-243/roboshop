@@ -41,4 +41,4 @@ yum install mongodb-org-shell -y &>>${log}
 
 
 echo -e "${Red}} <<<<<<<<<<<<<< checking mongodb connection >>>>>>>>>>>>>>${End}"
-mongo --host 172.31.88.57 </app/schema/user.js &>>${log}
+mongo --host mongodb.nareshdevops.cloud </app/schema/user.js &>>${log}
