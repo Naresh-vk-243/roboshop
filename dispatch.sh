@@ -1,6 +1,8 @@
 Red='\e[31m'
 End='\e[0m'
 
+log=/tmp/roboshop.log
+
 echo -e "${Red} <<<<<<<<<<<<<< removig and copying files  >>>>>>>>>>>>>>${End}"
 rm -rf /app /tmp/dispatch.zip /etc/systemd/system/dispatch.service&>>${log}
 cp -f dispatch.service /etc/systemd/system/dispatch.service&>>${log}

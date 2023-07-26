@@ -1,5 +1,6 @@
 RED='\e[31m'
 RESET='\e[0m'
+log=/tmp/roboshop.log
 
 echo -e "${RED}>>>>>>>>>>>>> Installing nodejs <<<<<<<<<<${RESET}"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash&>>${log}
