@@ -16,12 +16,5 @@ yum install redis -y &>>${log}
 echo  -e "${Red} <<<<<<<<<<<<<< replacing the ip address to 0.0.0.0  >>>>>>>>>>>>>>${End}"
 sed -i "s/127.0.0.1/0.0.0.0/g" /etc/redis.conf /etc/redis/redis.conf &>>${log}
 
-echo  -e "${Red} <<<<<<<<<<<<<< Enabling and restarting redis >>>>>>>>>>>>>>${End}"
-systemctl enable redis  &>>${log}
-systemctl restart redis  &>>${log}
+starting_enabling_without_daemon
 
-
-#
-#echo -e "${Red} <<<<<<<<<<<<<<  >>>>>>>>>>>>>>${End}"
-#
-#echo -e "${Red} <<<<<<<<<<<<<<  >>>>>>>>>>>>>>${End}"
