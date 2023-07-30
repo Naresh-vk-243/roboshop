@@ -1,4 +1,4 @@
-component=shipping
+component=user
 schema_type=mongodb
 source commonFuncs.sh
 
