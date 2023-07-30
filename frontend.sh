@@ -10,6 +10,5 @@ starting_enabling_without_daemon
 echo -e "${RED}>>>>>>>>>>>>> Removing nginx file <<<<<<<<<<<<<<<<<<<${RESET}"
 rm -rf /usr/share/nginx/html/*&>>${log}
 
-adduser_downloadCode_unzip
 
 starting_enabling_without_daemon
