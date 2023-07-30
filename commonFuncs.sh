@@ -83,11 +83,12 @@ install_nodeJs() {
   curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${log}
   yum install nodejs -y &>>${log}
 
+  adduser_downloadCode_unzip
+
   echo -e "${Red} <<<<<<<<<<<<<< installing dependencies  >>>>>>>>>>>>>>${End}"
   cd /app &>>${log}
   npm install &>>${log}
 
-  adduser_downloadCode_unzip
   func_schema_setup
   restarting_enabling_service
 }
