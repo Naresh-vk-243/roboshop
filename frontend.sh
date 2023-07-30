@@ -3,6 +3,7 @@ source commonFuncs.sh
 
 echo -e "${RED}>>>>>>>>>>>>> Installing nginx <<<<<<<<<<${RESET}"
 yum install nginx -y&>>${log}
+rm -rf /etc/nginx/default.d/roboshop.conf
 cp -f roboshop.conf /etc/nginx/default.d/&>>${log}
 
 starting_enabling_without_daemon
