@@ -2,6 +2,13 @@ Red='\e[31m'
 End='\e[0m'
 log=/tmp/roboshop.log
 
+func_exit_status() {
+  if [ $? -eq 0 ]; then
+    echo -e "\e[32m SUCCESS \e[0m"
+  else
+    echo -e "\e[31m FAILURE \e[0m"
+  fi
+}
 copy_and_remove_files() {
   echo -e "${Red} <<<<<<<<<<<<<< removing and copying files  >>>>>>>>>>>>>>${End}"
   rm -rf /app /etc/systemd/system/${component}.service /tmp/${component}.zip &>>${log}
@@ -21,7 +28,7 @@ adduser_downloadCode_unzip() {
 
   echo -e "${Red} <<<<<<<<<<<<<< creating dir nad downloading code base for ${component} >>>>>>>>>>>>>>${End}"
   mkdir /app &>>${log}
-  curl -L -o /tmp/cart.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>${log}
+  curl -L -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>${log}
 
   cd /app &>>${log}
   unzip /tmp/${component}.zip &>>${log}
@@ -93,7 +100,7 @@ install_Python() {
 
   adduser_downloadCode_unzip
 
-sed -i "s/rabbitmq_app_password/${rabbitmq_app_password}/" /etc/systemd/system/${component}.service
+  sed -i "s/rabbitmq_app_password/${rabbitmq_app_password}/" /etc/systemd/system/${component}.service
 
   echo -e "${Red} <<<<<<<<<<<<<< installing dependencies >>>>>>>>>>>>>>${End}"
   cd /app &>>${log}
