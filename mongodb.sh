@@ -3,7 +3,7 @@ RESET='\e[0m'
 log=/tmp/roboshop.log
 
 component=mongod
-source commonFuncs
+source commonFuncs.sh
 
 
 copy_and_remove_Repo_files

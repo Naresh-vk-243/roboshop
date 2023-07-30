@@ -2,6 +2,9 @@ Red='\e[31m'
 End='\e[0m'
 log=/tmp/roboshop.log
 
+component=redis
+source commonFuncs.sh
+
 echo  -e "${Red} <<<<<<<<<<<<<< Downloading the Redis rpm file which contains all versions >>>>>>>>>>>>>>${End}"
 yum install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y &>>${log}
 

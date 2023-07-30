@@ -9,7 +9,7 @@ if [ -z "${mysql_root_password}" ]; then
 fi
 
 component=mysql
-source commonFuncs
+source commonFuncs.sh
 
 copy_and_remove_Repo_files
 
